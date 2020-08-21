@@ -1,0 +1,24 @@
+﻿@model Movie
+
+<h1>Index</h1>
+@Html.ValidationSummary()
+<form action="../Movie/RegisterMovie" method="post">
+    @Html.LabelFor(m => m.ID)
+    @Html.ValidationMessageFor(m => m.ID)
+    <input type="text" name="ID" value="@Model.ID" /> <br />
+    @Html.LabelFor(m => m.Title)
+    @Html.ValidationMessageFor(m => m.Title)
+    <input type="text" name="Title" value="@Model.Title" /><br />
+    @Html.LabelFor(m => m.Genre)
+    @Html.ValidationMessageFor(m => m.Genre)
+    <input type="text" name="Genre" value="@Model.Genre" /><br />
+    @Html.LabelFor(m => m.Year)
+    @Html.ValidationMessageFor(m => m.Year)
+    <input type="number" min="1880" max="@DateTime.Today.Year" name="Year" value="@Model.Year" /><br />
+    @Html.LabelFor(m => m.Actors)
+    <input type="text" name="Actors" value="@Model.Actors" /><br />
+    @Html.LabelFor(m => m.Directors)
+    <input type="text" name="Directors" value="@Model.Directors" /><br />
+
+    <input type="submit" value="Add new movie!" />
+</form>
